@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <ion-button color="primary" (click)="takePicture()">Take a picture</ion-button>
+  <ion-button color="primary" (click)="choosePicture()">Choose picture from Gallery</ion-button>
+  <img [src]="base64Image" *ngIf="base64Image"/>
+  <div *ngFor="let image of images">
+    <img src="{{image}}"/>
+  </div>
 </ion-content>
